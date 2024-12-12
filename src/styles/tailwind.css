@@ -1,0 +1,18 @@
+@font-face {
+    font-family: 'Lastica';
+    src: url('../assets/fonts/lastica.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'TT-interphases';
+    src: url('../assets/fonts/tt-interphases.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+  }
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
