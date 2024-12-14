@@ -2,7 +2,7 @@ import React from 'react';
 
 const WhyChooseUs = () => (
   <section id="why" className="py-20 bg-black text-white">
-    <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+    <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 px-10">
       <div>
         <h2 className="text-4xl font-bold mb-4">Por qué elegirnos</h2>
         <ul className="text-lg space-y-4">

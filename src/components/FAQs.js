@@ -2,7 +2,7 @@ import React from 'react';
 
 const FAQs = () => (
   <section id="faqs" className="py-20 bg-gradient-to-b from-purple-600 to-blue-500 text-white">
-    <div className="container mx-auto">
+    <div className="container mx-auto px-10">
       <h2 className="text-4xl font-bold text-center mb-8">FAQs</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         <div>

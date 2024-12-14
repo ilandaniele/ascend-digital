@@ -12,12 +12,12 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <Hero />
+      <Hero /> {/* issues problem with lastica*/}
       <About />
       <WhyChooseUs />
       <FAQs />
       <ContactForm />
-      {/* <Footer /> */}
+      <Footer /> {/* issues */}
     </div>
   );
 }

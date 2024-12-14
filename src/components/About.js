@@ -2,7 +2,7 @@ import React from 'react';
 
 const About = () => (
   <section id="about" className="py-20 bg-gradient-to-b from-blue-600 to-purple-700 text-white">
-    <div className="container mx-auto flex justify-end">
+    <div className="container mx-auto flex justify-end px-10">
         <div className="w-full md:w-3/4 lg:w-2/3 px-4 md:ml-8 lg:ml-16">
             <h2 className="text-4xl font-bold mb-8">About Digital Ascend</h2>
             <ul className="text-lg space-y-4">
