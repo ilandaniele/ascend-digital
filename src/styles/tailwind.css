@@ -1,3 +1,7 @@
+html, body {
+  margin: 0;
+}
+
 @font-face {
     font-family: 'Lastica';
     src: url('../assets/fonts/lastica.ttf') format('truetype');

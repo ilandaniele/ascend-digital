@@ -17,7 +17,7 @@ function App() {
       <WhyChooseUs />
       <FAQs />
       <ContactForm />
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }
