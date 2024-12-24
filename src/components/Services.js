@@ -1,22 +1,21 @@
 import React from 'react';
 
 const Services = () => (
-  <section id="services" className="py-20">
-    <div className="container mx-auto text-center">
-      <h2 className="text-3xl font-bold mb-8">Our Services</h2>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div className="p-6 bg-white shadow rounded">
-          <h3 className="text-xl font-semibold mb-2">SEO Optimization</h3>
-          <p className="text-gray-700">Boost your website's visibility.</p>
-        </div>
-        <div className="p-6 bg-white shadow rounded">
-          <h3 className="text-xl font-semibold mb-2">Content Marketing</h3>
-          <p className="text-gray-700">Engage your audience with quality content.</p>
-        </div>
-        <div className="p-6 bg-white shadow rounded">
-          <h3 className="text-xl font-semibold mb-2">Web Development</h3>
-          <p className="text-gray-700">Modern and responsive website designs.</p>
-        </div>
+  <section id="why" className="py-20 bg-black text-white">
+    <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 px-10">
+      <div>
+        <h2 className="text-4xl font-bold mb-4">Servicios que Ofrecemos</h2>
+        <ul className="text-lg space-y-4">
+          <li>Diseño y optimizacion Web</li>
+          <li>Páginas modernas, responsivas y orientadas a convertir visitas en consultas.</li>
+          <li>Contenido y Optimización de Redes Sociales.</li>
+          <li>Creación de publicaciones estratégicas y gestión de perfiles como Instagram.</li>
+          <li>Anuncios Pagos en Redes Sociales</li>
+          <li>Campañas diseñadas para captar clientes potenciales y aumentar consultas.</li>
+        </ul>
+      </div>
+      <div className="flex items-center justify-center">
+        <div className="w-48 h-48 bg-gradient-to-r from-purple-700 to-blue-600 animate-pulse"></div>
       </div>
     </div>
   </section>

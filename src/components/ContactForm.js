@@ -4,8 +4,8 @@ const ContactForm = () => (
   <div className="text-left space-y-2">
     <section className="py-12 bg-gradient-to-b from-blue-600 to-purple-700 text-white">
     <div className="container mx-auto px-4">
-    <h2 className="text-3xl font-bold mb-6">Contáctanos</h2>
-    <div className="flex flex-col md:flex-row">
+    <h2 className="ml-10 text-3xl font-bold mb-6">Contáctanos</h2>
+    <div className="ml-10 flex flex-col md:flex-row">
         <div className="md:w-1/2 md:pr-8">
         <form className="space-y-4">
             <div>

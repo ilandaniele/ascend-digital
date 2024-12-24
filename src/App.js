@@ -1,8 +1,9 @@
 import React from 'react';
-import Header from './components/Header';
-import Hero from './components/Hero';
+
+import BackgroundWrapper from './components/BackgroundWrapper';
 import About from './components/About';
-import WhyChooseUs from './components/WhyChooseUs';
+import Services from './components/Services';
+import Blog from './components/Blog';
 import FAQs from './components/FAQs';
 import ContactForm from './components/ContactForm';
 import Footer from './components/Footer';
@@ -11,13 +12,13 @@ import './styles/tailwind.css';
 function App() {
   return (
     <div className="App">
-      <Header />
-      <Hero /> {/* issues problem with lastica*/}
+      <BackgroundWrapper />
       <About />
-      <WhyChooseUs />
+      <Services />
+      <Blog />
       <FAQs />
       <ContactForm />
-      <Footer /> {/* issues */}
+      <Footer /> {/* issues at 620 */}
     </div>
   );
 }

@@ -17,6 +17,18 @@ module.exports = {
         sans: ['ui-sans-serif', 'system-ui', 'sans-serif'],
         tt_interphases: ['TT-interphases'],
       },
+      fontSize: {
+        '8xl': '6rem',  // 96px
+        '9xl': '8rem',  // 128px
+        '10xl': '10rem', // 160px
+        // Agrega más tamaños según tus necesidades
+      },
+      backdropBlur: {
+        sm: '4px',
+        md: '8px',
+        lg: '12px',
+        xl: '16px',
+      },
     },
   },
   plugins: [],
