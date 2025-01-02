@@ -1,6 +1,7 @@
 import React from 'react';
 
-import BackgroundWrapper from './components/BackgroundWrapper';
+import Header from './components/Header';
+import Presentation from './components/Presentation';
 import About from './components/About';
 import Services from './components/Services';
 import Blog from './components/Blog';
@@ -12,7 +13,8 @@ import './styles/tailwind.css';
 function App() {
   return (
     <div className="App">
-      <BackgroundWrapper />
+      <Header />
+      <Presentation />
       <About />
       <Services />
       <Blog />

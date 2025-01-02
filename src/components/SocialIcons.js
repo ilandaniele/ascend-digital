@@ -1,18 +1,41 @@
 import React from 'react';
-import { FaFacebook, FaInstagram, FaTwitter } from 'react-icons/fa';
+import { FaFacebook, FaInstagram, FaWhatsapp, FaXTwitter } from 'react-icons/fa6';
 
-const SocialIcons = () => (
-  <div className="flex space-x-4">
-    <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-gray-700">
-      <FaFacebook size={24} />
-    </a>
-    <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-gray-700">
-      <FaInstagram size={24} />
-    </a>
-    <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-gray-700">
-      <FaTwitter size={24} />
-    </a>
-  </div>
-);
+const SocialIcons = ({ iconsToShow = [] }) => {
+  const availableIcons = {
+    facebook: {
+      icon: <FaFacebook size={24} />,
+      link: 'https://www.facebook.com',
+    },
+    instagram: {
+      icon: <FaInstagram size={24} />,
+      link: 'https://www.instagram.com',
+    },
+    whatsapp: {
+      icon: <FaWhatsapp size={24} />,
+      link: 'https://www.whatsapp.com',
+    },
+    twitter: {
+      icon: <FaXTwitter size={24} />,
+      link: 'https://www.twitter.com',
+    },
+  };
+
+  return (
+    <div className="flex space-x-4">
+      {iconsToShow.map((icon) => (
+        <a
+          key={icon}
+          href={availableIcons[icon]?.link || '#'}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-custom-pink hover:text-gray-700"
+        >
+          {availableIcons[icon]?.icon}
+        </a>
+      ))}
+    </div>
+  );
+};
 
 export default SocialIcons;

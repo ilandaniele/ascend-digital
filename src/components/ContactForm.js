@@ -1,51 +1,183 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { motion, useAnimation } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
+import emailjs from '@emailjs/browser';
+import SocialIcons from './SocialIcons';
 
-const ContactForm = () => (
-  <div className="text-left space-y-2">
-    <section className="py-12 bg-gradient-to-b from-blue-600 to-purple-700 text-white">
-    <div className="container mx-auto px-4">
-    <h2 className="ml-10 text-3xl font-bold mb-6">Contáctanos</h2>
-    <div className="ml-10 flex flex-col md:flex-row">
-        <div className="md:w-1/2 md:pr-8">
-        <form className="space-y-4">
-            <div>
-            <label className="block text-sm font-medium text-gray-700">Nombre</label>
-            <input
-                type="text"
-                className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-                placeholder="Tu nombre"
-            />
+const ContactForm = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    message: '',
+  });
+
+  const [errors, setErrors] = useState({});
+  const controls = useAnimation();
+  const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.2 });
+
+  useEffect(() => {
+    if (inView) {
+      controls.start('visible');
+    }
+  }, [controls, inView]);
+
+  const variants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.8, staggerChildren: 0.2 } },
+  };
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+  };
+
+  const validate = () => {
+    let formErrors = {};
+    if (!formData.name) formErrors.name = 'El nombre es obligatorio';
+    if (!formData.phone) formErrors.phone = 'El teléfono es obligatorio';
+    return formErrors;
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const formErrors = validate();
+    if (Object.keys(formErrors).length === 0) {
+      emailjs
+        .send(
+          process.env.REACT_APP_EMAILJS_SERVICE_ID,
+          process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
+          {
+            name: formData.name,
+            phone: formData.phone,
+            email: formData.email || 'No proporcionado',
+            message: formData.message || 'No proporcionado',
+          },
+          process.env.REACT_APP_EMAILJS_USER_ID
+        )
+        .then(
+          () => {
+            alert('Mensaje enviado con éxito');
+            setFormData({
+              name: '',
+              email: '',
+              phone: '',
+              message: '',
+            });
+          },
+          (error) => {
+            console.error(error.text);
+            alert('Hubo un error al enviar el mensaje');
+          }
+        );
+    } else {
+      setErrors(formErrors);
+    }
+  };
+
+  return (
+    <motion.section
+      id="contactForm"
+      className="py-12 bg-gradient-to-b from-blue-600 to-purple-700 text-white relative min-h-screen overflow-hidden"
+      ref={ref}
+      initial="hidden"
+      animate={controls}
+      variants={variants}
+    >
+      <motion.div
+        className="container mx-auto px-4"
+        initial="hidden"
+        animate={controls}
+        variants={variants}
+      >
+        <h2 className="ml-10 text-3xl font-bold mb-6">Contáctanos</h2>
+        <div className="ml-10 flex flex-col md:flex-row">
+          {/* Formulario de contacto */}
+          <motion.div className="md:w-1/2 md:pr-8 space-y-4" variants={variants}>
+            <form onSubmit={handleSubmit}>
+              <div>
+                <label className="block text-sm font-medium text-gray-200">Nombre</label>
+                <input
+                  type="text"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  className="mt-1 bg-gray-800 block w-full px-3 py-2 border border-gray-600 rounded-md shadow-sm focus:outline-none"
+                  placeholder="Tu nombre"
+                />
+                {errors.name && <p className="text-red-500 text-xs mt-1">{errors.name}</p>}
+              </div>
+              <div>
+                <label className="block text-sm font-medium text-gray-200">Correo Electrónico</label>
+                <input
+                  type="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  className="mt-1 bg-gray-800 block w-full px-3 py-2 border border-gray-600 rounded-md shadow-sm focus:outline-none"
+                  placeholder="tucorreo@ejemplo.com"
+                />
+              </div>
+              <div>
+                <label className="block text-sm font-medium text-gray-200">Teléfono</label>
+                <input
+                  type="tel"
+                  name="phone"
+                  value={formData.phone}
+                  onChange={handleChange}
+                  className="mt-1 bg-gray-800 block w-full px-3 py-2 border border-gray-600 rounded-md shadow-sm focus:outline-none"
+                  placeholder="+598 99 413 456"
+                />
+                {errors.phone && <p className="text-red-500 text-xs mt-1">{errors.phone}</p>}
+              </div>
+              <div>
+                <label className="block text-sm font-medium text-gray-200">Mensaje</label>
+                <textarea
+                  name="message"
+                  value={formData.message}
+                  onChange={handleChange}
+                  className="mt-1 bg-gray-800 block w-full px-3 py-2 border border-gray-600 rounded-md shadow-sm focus:outline-none"
+                  rows="4"
+                  placeholder="Escribe tu mensaje aquí..."
+                ></textarea>
+              </div>
+              <div>
+                <button
+                  type="submit"
+                  className="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none"
+                >
+                  Enviar
+                </button>
+              </div>
+            </form>
+          </motion.div>
+          {/* Sección de contacto por WhatsApp */}
+          <motion.div
+            className="md:w-1/2 md:pl-8 mt-8 md:mt-0 flex flex-col items-center justify-center"
+            variants={variants}
+          >
+            <div className="bg-gray-800 bg-opacity-50 p-6 rounded-lg text-center">
+              <p className="text-lg font-semibold mb-4">
+                Contáctanos también por WhatsApp de forma más rápida
+              </p>
+              <a
+                href="https://wa.me/59899413456"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center text-green-500 hover:text-green-400"
+              >
+                <SocialIcons iconsToShow={['whatsapp']} />
+                Enviar mensaje
+              </a>
             </div>
-            <div>
-            <label className="block text-sm font-medium text-gray-700">Correo Electrónico</label>
-            <input
-                type="email"
-                className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-                placeholder="tucorreo@ejemplo.com"
-            />
-            </div>
-            <div>
-            <label className="block text-sm font-medium text-gray-700">Mensaje</label>
-            <textarea
-                className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-                rows="4"
-                placeholder="Escribe tu mensaje aquí..."
-            ></textarea>
-            </div>
-            <div>
-            <button
-                type="submit"
-                className="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-            >
-                Enviar
-            </button>
-            </div>
-        </form>
+          </motion.div>
         </div>
-    </div>
-    </div>
-    </section>
-    </div>
-);
+      </motion.div>
+    </motion.section>
+  );
+};
 
 export default ContactForm;

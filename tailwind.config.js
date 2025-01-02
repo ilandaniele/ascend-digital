@@ -12,6 +12,9 @@ module.exports = {
       '2xl': '1536px',
     },
     extend: {
+      colors: {
+        'custom-pink': 'rgb(215, 60, 190)',
+      },
       fontFamily: {
         lastica: ['Lastica', 'sans-serif'],
         sans: ['ui-sans-serif', 'system-ui', 'sans-serif'],
@@ -28,6 +31,9 @@ module.exports = {
         md: '8px',
         lg: '12px',
         xl: '16px',
+      },
+      opacity: {
+        '15': '0.15',
       },
     },
   },
