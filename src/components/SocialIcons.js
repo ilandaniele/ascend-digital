@@ -1,7 +1,7 @@
 import React from 'react';
 import { FaFacebook, FaInstagram, FaWhatsapp, FaXTwitter } from 'react-icons/fa6';
 
-const SocialIcons = ({ iconsToShow = [] }) => {
+const SocialIcons = ({ iconsToShow = [], iconClasses = {} }) => {
   const availableIcons = {
     facebook: {
       icon: <FaFacebook size={24} />,
@@ -29,7 +29,7 @@ const SocialIcons = ({ iconsToShow = [] }) => {
           href={availableIcons[icon]?.link || '#'}
           target="_blank"
           rel="noopener noreferrer"
-          className="text-custom-pink hover:text-gray-700"
+          className={`${iconClasses[icon] || 'text-custom-pink'} hover:opacity-80 transition-opacity duration-200`}
         >
           {availableIcons[icon]?.icon}
         </a>

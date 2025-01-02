@@ -1,12 +1,13 @@
 import React, { useEffect } from 'react';
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import { FaWhatsapp } from 'react-icons/fa';
 
-const Header = () => {
+const Presentation = () => {
   const controls = useAnimation();
   const [ref, inView] = useInView({
-    triggerOnce: true, // La animación se ejecutará solo una vez
-    threshold: 0.2, // Cuando el 20% del elemento esté en vista
+    triggerOnce: true,
+    threshold: 0.2,
   });
 
   useEffect(() => {
@@ -21,8 +22,11 @@ const Header = () => {
   };
 
   return (
-    <motion.section id="presentation">
-    <div ref={ref} className="relative min-h-screen flex flex-col overflow-hidden">
+    <motion.section
+      id="presentation"
+      ref={ref}
+      className="relative min-h-screen flex flex-col overflow-hidden"
+    >
       {/* Video de fondo */}
       <video
         autoPlay
@@ -30,40 +34,38 @@ const Header = () => {
         muted
         className="absolute inset-0 w-full h-full object-cover"
       >
-        <source src={require('../assets/vecteezy_pink-color-digital-particle-wave-in-cyberspace-abstract_27681863-2.mp4')} type="video/mp4" />
+        <source
+          src={require('../assets/vecteezy_pink-color-digital-particle-wave-in-cyberspace-abstract_27681863-2.mp4')}
+          type="video/mp4"
+        />
         Tu navegador no soporta la reproducción de videos.
       </video>
       {/* Superposición para mejorar la legibilidad */}
       <div className="absolute inset-0 bg-black opacity-50"></div>
       {/* Contenido */}
-      <div className="relative z-10 text-white flex-grow flex flex-col justify-between">
-        {/* Sección superior del Header */}
+      <div className="relative z-10 text-white flex-grow flex flex-col justify-center items-start px-6 md:px-20">
         <motion.div
-          className="container mx-auto flex justify-between items-center py-4 px-6 md:py-10 md:px-20"
+          className="container mx-auto text-left"
           initial="hidden"
           animate={controls}
           variants={variants}
         >
-          <img
-            src={require('../assets/logo.png')}
-            alt="Logo Ascend Digital"
-            className="h-12 md:h-64"
-          />
-        </motion.div>
-        {/* Sección Hero */}
-        <motion.div
-          className="container mx-auto text-center py-10 px-6 md:py-20 md:px-20 flex-grow flex flex-col justify-center"
-          initial="hidden"
-          animate={controls}
-          variants={variants}
-        >
-          <h2 className="text-left font-sans text-5xl md:text-8xl mb-4">ASCEND DIGITAL</h2>
-          <p className="text-left text-2xl md:text-4xl mb-8">Agencia de Marketing Digital</p>
+          <h2 className="font-sans text-5xl md:text-8xl mb-4">ASCEND DIGITAL</h2>
+          <p className="text-2xl md:text-4xl mb-8">Agencia de Marketing Digital</p>
+          {/* Botón de WhatsApp */}
+          <a
+            href="https://wa.me/59899413456"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center text-white text-xl bg-green-500 px-6 py-3 rounded-lg shadow-lg hover:bg-green-600 transition duration-300"
+          >
+            <FaWhatsapp className="text-2xl mr-3" />
+            Envíanos un mensaje
+          </a>
         </motion.div>
       </div>
-    </div>
     </motion.section>
   );
 };
 
-export default Header;
+export default Presentation;

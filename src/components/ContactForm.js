@@ -80,7 +80,7 @@ const ContactForm = () => {
 
   return (
     <motion.section
-      id="contactForm"
+      id="contact"
       className="py-12 bg-gradient-to-b from-blue-600 to-purple-700 text-white relative min-h-screen overflow-hidden"
       ref={ref}
       initial="hidden"
@@ -160,17 +160,20 @@ const ContactForm = () => {
             variants={variants}
           >
             <div className="bg-gray-800 bg-opacity-50 p-6 rounded-lg text-center">
-              <p className="text-lg font-semibold mb-4">
-                Contáctanos también por WhatsApp de forma más rápida
-              </p>
+              <p className="text-white text-2xl font-semibold mb-4">De manera más rápida</p>
               <a
                 href="https://wa.me/59899413456"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center text-green-500 hover:text-green-400"
+                className="flex items-center justify-center bg-green-500 text-white text-lg font-semibold rounded-full px-6 py-3 shadow-lg hover:bg-white hover:text-green-500 hover:border-green-500 hover:border-2 transition-all duration-300"
               >
-                <SocialIcons iconsToShow={['whatsapp']} />
-                Enviar mensaje
+                <SocialIcons
+                  iconsToShow={['whatsapp']}
+                  iconClasses={{
+                    whatsapp: 'text-white mr-2',
+                  }}
+                />
+                Envíanos un mensaje
               </a>
             </div>
           </motion.div>
