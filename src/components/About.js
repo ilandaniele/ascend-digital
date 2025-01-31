@@ -31,7 +31,7 @@ const About = () => {
     >
       <div className="container mx-auto flex justify-end px-10">
         <div className="w-full md:w-3/4 lg:w-2/3 px-4 md:ml-8 lg:ml-16">
-          <h2 className="text-7xl mb-8">About Digital Ascend</h2>
+          <h2 className="text-7xl mb-8">Acerca de Digital Ascend</h2>
           <ul className="list-disc list-outside text-2xl space-y-4 pl-6">
             {items.map((item, index) => (
               <motion.li

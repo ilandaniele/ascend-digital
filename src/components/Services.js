@@ -1,57 +1,66 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
 
 const Services = () => {
-  // Variantes para la animación
-  const listVariants = {
-    hidden: { opacity: 0, y: 50 },
-    visible: (index) => ({
-      opacity: 1,
-      y: 0,
-      transition: {
-        delay: index * 0.2, // Retardo entre cada punto
-        duration: 0.5,
-      },
-    }),
-  };
+  const { scrollYProgress } = useScroll();
 
-  const items = [
-    "Diseño y optimización Web",
-    "Páginas modernas, responsivas y orientadas a convertir visitas en consultas.",
-    "Contenido y Optimización de Redes Sociales.",
-    "Creación de publicaciones estratégicas y gestión de perfiles como Instagram.",
-    "Anuncios Pagos en Redes Sociales",
-    "Campañas diseñadas para captar clientes potenciales y aumentar consultas.",
-  ];
+  // Movimiento alternado de cada palabra
+  const xDiseño = useTransform(scrollYProgress, [0.1, 0.3], ["-20vw", "40vw"]);
+  const xBranding = useTransform(scrollYProgress, [0.1, 0.3], ["40vw", "-30vw"]);
+  const xRedes = useTransform(scrollYProgress, [0.1, 0.3], ["-30vw", "30vw"]);
+  const xMarketing = useTransform(scrollYProgress, [0.1, 0.3], ["60vw", "-10vw"]);
+  const xAnuncios = useTransform(scrollYProgress, [0.1, 0.3], ["-50vw", "10vw"]);
+  const xEstrategia = useTransform(scrollYProgress, [0.1, 0.3], ["90vw", "10vw"]);
+
+  // Opacidad dinámica
+  const opacityDiseño = useTransform(scrollYProgress, [0.1, 0.15, 0.2], [0.2, 1, 0.2]);
+  const opacityBranding = useTransform(scrollYProgress, [0.15, 0.2, 0.25], [0.2, 1, 0.2]);
+  const opacityRedes = useTransform(scrollYProgress, [0.2, 0.25, 0.3], [0.2, 1, 0.2]);
+  const opacityMarketing = useTransform(scrollYProgress, [0.25, 0.3, 0.35], [0.2, 1, 0.2]);
+  const opacityAnuncios = useTransform(scrollYProgress, [0.3, 0.35, 0.4], [0.2, 1, 0.2]);
+  const opacityEstrategia = useTransform(scrollYProgress, [0.35, 0.4, 0.45], [0.2, 1, 0.2]);
 
   return (
     <section
       id="services"
-      className="py-20 bg-black text-white relative min-h-screen overflow-hidden"
+      className="relative bg-black text-white min-h-[190vh] flex flex-col items-center justify-start w-full overflow-hidden"
     >
-      <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 px-10 items-start">
-        <div>
-          <h2 className="text-7xl mb-4">Servicios que Ofrecemos</h2>
-          <ul className="list-disc list-outside text-2xl space-y-4 pl-6">
-            {items.map((item, index) => (
-              <motion.li
-                key={index}
-                custom={index}
-                initial="hidden"
-                whileInView="visible"
-                variants={listVariants}
-                viewport={{ once: true, amount: 0.2 }}
-                className="opacity-0"
-              >
-                {item}
-              </motion.li>
-            ))}
-          </ul>
-        </div>
-        <div className="flex items-center justify-center">
-          <div className="w-48 h-48 bg-gradient-to-r from-purple-700 to-blue-600 animate-pulse"></div>
-        </div>
-      </div>
+      <motion.div
+        style={{ x: xDiseño, opacity: opacityDiseño }}
+        className="text-6xl sm:text-8xl 2xl:text-12xl font-bold uppercase absolute top-[10%] mt-10 mb-10 left-4 sm:left-auto"
+      >
+        Diseño
+      </motion.div>
+      <motion.div
+        style={{ x: xBranding, opacity: opacityBranding }}
+        className="text-6xl sm:text-8xl 2xl:text-12xl font-bold uppercase absolute top-[20%] mt-10 mb-10 left-4 sm:left-auto"
+      >
+        Branding
+      </motion.div>
+      <motion.div
+        style={{ x: xRedes, opacity: opacityRedes }}
+        className="text-6xl sm:text-8xl 2xl:text-12xl font-bold uppercase absolute top-[30%] mt-10 mb-10 left-4 sm:left-auto"
+      >
+        Redes Sociales
+      </motion.div>
+      <motion.div
+        style={{ x: xMarketing, opacity: opacityMarketing }}
+        className="text-6xl sm:text-8xl 2xl:text-12xl font-bold uppercase absolute top-[40%] mt-10 mb-10 left-4 sm:left-auto"
+      >
+        Marketing
+      </motion.div>
+      <motion.div
+        style={{ x: xAnuncios, opacity: opacityAnuncios }}
+        className="text-6xl sm:text-8xl 2xl:text-12xl font-bold uppercase absolute top-[50%] mt-10 mb-10 left-4 sm:left-auto"
+      >
+        Anuncios
+      </motion.div>
+      <motion.div
+        style={{ x: xEstrategia, opacity: opacityEstrategia }}
+        className="text-6xl sm:text-8xl 2xl:text-12xl font-bold uppercase absolute top-[60%] mt-10 mb-10 left-4 sm:left-auto"
+      >
+        Estrategia
+      </motion.div>
     </section>
   );
 };

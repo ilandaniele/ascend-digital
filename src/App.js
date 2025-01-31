@@ -4,6 +4,7 @@ import Header from './components/Header';
 import Presentation from './components/Presentation';
 import About from './components/About';
 import Services from './components/Services';
+import WhyUs from './components/WhyUs';
 import Blog from './components/Blog';
 import FAQs from './components/FAQs';
 import ContactForm from './components/ContactForm';
@@ -15,8 +16,9 @@ function App() {
     <div className="App">
       <Header />
       <Presentation />
-      <About />
+      {/* <About /> */}
       <Services />
+      <WhyUs />
       <Blog />
       <FAQs />
       <ContactForm />

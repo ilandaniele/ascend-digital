@@ -59,11 +59,11 @@ const Header = () => {
             menuOpen ? 'block' : 'hidden'
           } absolute top-full left-0 w-full bg-black bg-opacity-90 text-white md:bg-transparent md:bg-opacity-0 md:static md:flex md:items-center md:justify-center md:space-x-8`}
         >
-          <ul className="flex flex-col md:flex-row md:space-x-4 text-sm md:text-lg">
+          <ul className="flex flex-col md:flex-row md:space-x-4 text-md md:text-lg">
             {menuItems.map((item, index) => (
               <li
                 key={index}
-                className="hover:text-custom-pink cursor-pointer transition-colors duration-200 hover:border hover:border-custom-pink hover:rounded-md px-4 py-2 md:px-2 md:py-1"
+                className="hover:text-custom-pink cursor-pointer transition-colors duration-200 px-4 py-2 md:px-2 md:py-1"
                 onClick={() => scrollToSection(item.sectionId)}
               >
                 {item.name}
@@ -71,6 +71,7 @@ const Header = () => {
             ))}
           </ul>
         </nav>
+        
       </div>
     </header>
   );

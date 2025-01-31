@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { FaWhatsapp } from 'react-icons/fa';
+import ParticlesBackground from './ParticlesBackground';
 
 const Presentation = () => {
   const controls = useAnimation();
@@ -28,18 +29,8 @@ const Presentation = () => {
       className="relative min-h-screen flex flex-col overflow-hidden"
     >
       {/* Video de fondo */}
-      <video
-        autoPlay
-        loop
-        muted
-        className="absolute inset-0 w-full h-full object-cover"
-      >
-        <source
-          src={require('../assets/vecteezy_pink-color-digital-particle-wave-in-cyberspace-abstract_27681863-2.mp4')}
-          type="video/mp4"
-        />
-        Tu navegador no soporta la reproducción de videos.
-      </video>
+      
+      {/* <ParticlesBackground /> */}
       {/* Superposición para mejorar la legibilidad */}
       <div className="absolute inset-0 bg-black opacity-50"></div>
       {/* Contenido */}

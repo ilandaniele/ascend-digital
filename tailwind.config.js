@@ -24,6 +24,8 @@ module.exports = {
         '8xl': '6rem',  // 96px
         '9xl': '8rem',  // 128px
         '10xl': '10rem', // 160px
+        '11xl': '11rem', // 160px
+        '12xl': '12rem'
         // Agrega más tamaños según tus necesidades
       },
       backdropBlur: {
