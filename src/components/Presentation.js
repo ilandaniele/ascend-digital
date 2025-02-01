@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { FaWhatsapp } from 'react-icons/fa';
-import ParticlesBackground from './ParticlesBackground';
 
 const Presentation = () => {
   const controls = useAnimation();
@@ -29,8 +28,23 @@ const Presentation = () => {
       className="relative min-h-screen flex flex-col overflow-hidden"
     >
       {/* Video de fondo */}
+      <div className="absolute inset-0 overflow-hidden">
+        <video
+          autoPlay
+          loop
+          muted
+          className="w-full h-full object-cover"
+        >
+          <source
+            src={require('../assets/city.mp4')}
+            type="video/mp4"
+          />
+          Tu navegador no soporta la reproducción de videos.
+        </video>
+        {/* Superposición oscura */}
+        
+      </div>
       
-      {/* <ParticlesBackground /> */}
       {/* Superposición para mejorar la legibilidad */}
       <div className="absolute inset-0 bg-black opacity-50"></div>
       {/* Contenido */}
@@ -42,7 +56,7 @@ const Presentation = () => {
           variants={variants}
         >
           <h2 className="font-sans text-5xl md:text-8xl mb-4">ASCEND DIGITAL</h2>
-          <p className="text-2xl md:text-4xl mb-8">Agencia de Marketing Digital</p>
+          <p className="text-2xl md:text-4xl mb-8">Agencia de Marketing Inmobiliario</p>
           {/* Botón de WhatsApp */}
           <a
             href="https://wa.me/59899413456"

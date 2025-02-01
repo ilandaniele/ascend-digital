@@ -27,37 +27,37 @@ const Services = () => {
     >
       <motion.div
         style={{ x: xDiseño, opacity: opacityDiseño }}
-        className="text-6xl sm:text-8xl 2xl:text-12xl font-bold uppercase absolute top-[10%] mt-10 mb-10 left-4 sm:left-auto"
+        className="text-6xl sm:text-9xl 2xl:text-9xl 3xl:text-12xl font-bold uppercase absolute top-[10%] mt-10 mb-10 left-4 sm:left-auto"
       >
         Diseño
       </motion.div>
       <motion.div
         style={{ x: xBranding, opacity: opacityBranding }}
-        className="text-6xl sm:text-8xl 2xl:text-12xl font-bold uppercase absolute top-[20%] mt-10 mb-10 left-4 sm:left-auto"
+        className="text-6xl sm:text-9xl 2xl:text-9xl 3xl:text-12xl font-bold uppercase absolute top-[20%] mt-10 mb-10 left-4 sm:left-auto"
       >
         Branding
       </motion.div>
       <motion.div
         style={{ x: xRedes, opacity: opacityRedes }}
-        className="text-6xl sm:text-8xl 2xl:text-12xl font-bold uppercase absolute top-[30%] mt-10 mb-10 left-4 sm:left-auto"
+        className="text-6xl sm:text-9xl 2xl:text-9xl 3xl:text-12xl font-bold uppercase absolute top-[30%] mt-10 mb-10 left-4 sm:left-auto"
       >
         Redes Sociales
       </motion.div>
       <motion.div
         style={{ x: xMarketing, opacity: opacityMarketing }}
-        className="text-6xl sm:text-8xl 2xl:text-12xl font-bold uppercase absolute top-[40%] mt-10 mb-10 left-4 sm:left-auto"
+        className="text-6xl sm:text-9xl 2xl:text-9xl 3xl:text-12xl font-bold uppercase absolute top-[40%] mt-10 mb-10 left-4 sm:left-auto"
       >
         Marketing
       </motion.div>
       <motion.div
         style={{ x: xAnuncios, opacity: opacityAnuncios }}
-        className="text-6xl sm:text-8xl 2xl:text-12xl font-bold uppercase absolute top-[50%] mt-10 mb-10 left-4 sm:left-auto"
+        className="text-6xl sm:text-9xl 2xl:text-9xl 3xl:text-12xl font-bold uppercase absolute top-[50%] mt-10 mb-10 left-4 sm:left-auto"
       >
         Anuncios
       </motion.div>
       <motion.div
         style={{ x: xEstrategia, opacity: opacityEstrategia }}
-        className="text-6xl sm:text-8xl 2xl:text-12xl font-bold uppercase absolute top-[60%] mt-10 mb-10 left-4 sm:left-auto"
+        className="text-6xl sm:text-9xl 2xl:text-9xl 3xl:text-12xl font-bold uppercase absolute top-[60%] mt-10 mb-10 left-4 sm:left-auto"
       >
         Estrategia
       </motion.div>
