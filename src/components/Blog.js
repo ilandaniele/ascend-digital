@@ -61,7 +61,7 @@ const Blog = () => {
             className="bg-gray-800 p-6 rounded-lg shadow-md hover:bg-gray-700 transition duration-300"
             variants={itemVariants}
           >
-            <h3 className="text-xl font-semibold text-yellow-400 mb-4">
+            <h3 className="text-xl font-semibold text-white mb-4">
               Artículos Educativos
             </h3>
             <ul className="list-disc list-inside text-white">
@@ -73,7 +73,7 @@ const Blog = () => {
             className="bg-gray-800 p-6 rounded-lg shadow-md hover:bg-gray-700 transition duration-300"
             variants={itemVariants}
           >
-            <h3 className="text-xl font-semibold text-green-400 mb-4">
+            <h3 className="text-xl font-semibold text-white mb-4">
               Guías Rápidas
             </h3>
             <ul className="list-disc list-inside text-white">
@@ -85,7 +85,7 @@ const Blog = () => {
             className="bg-gray-800 p-6 rounded-lg shadow-md hover:bg-gray-700 transition duration-300"
             variants={itemVariants}
           >
-            <h3 className="text-xl font-semibold text-blue-400 mb-4">
+            <h3 className="text-xl font-semibold text-white mb-4">
               Tendencias
             </h3>
             <ul className="list-disc list-inside text-white">

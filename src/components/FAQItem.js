@@ -8,7 +8,7 @@ const FAQItem = ({ question, answer }) => {
     <div className="mb-4">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="w-full text-left p-4 bg-pink-500 text-white rounded-t-lg focus:outline-none flex justify-between items-center"
+        className="w-full text-left p-4 bg-black text-white rounded-t-lg focus:outline-none flex justify-between items-center"
       >
         <span className="text-lg font-medium">{question}</span>
         <svg

@@ -56,13 +56,13 @@ const FAQs = () => {
   return (
     <motion.section
       id="faqs"
-      className="relative py-20 bg-gradient-to-b from-purple-600 to-blue-500"
+      className="relative py-20 bg-black"
       ref={ref}
       initial="hidden"
       animate={controls}
       variants={variants}
     >
-      <div className="absolute inset-0 overflow-hidden">
+      {/* <div className="absolute inset-0 overflow-hidden">
         <video
           autoPlay
           loop
@@ -73,7 +73,7 @@ const FAQs = () => {
           Tu navegador no soporta la reproducción de videos.
         </video>
         <div className="absolute inset-0 bg-black opacity-50"></div>
-      </div>
+      </div> */}
       <div className="relative container mx-auto px-4 md:px-8 lg:px-16">
         <motion.h2
           className="text-4xl font-bold text-center mb-8 text-white"

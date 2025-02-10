@@ -25,7 +25,7 @@ const Footer = () => {
 
   return (
     <motion.footer
-      className="relative bg-purple-900 text-white py-8 min-h-screen overflow-hidden flex items-end pb-20"
+      className="relative bg-black text-white py-8 min-h-screen overflow-hidden flex items-end"
       ref={ref}
       initial="hidden"
       animate={controls}
@@ -40,7 +40,7 @@ const Footer = () => {
           className="w-full h-full object-cover"
         >
           <source
-            src={require('../assets/vecteezy_pink-color-digital-particle-wave-in-cyberspace-abstract_27681863-2.mp4')}
+            src={require('../assets/city2.mp4')}
             type="video/mp4"
           />
           Tu navegador no soporta la reproducción de videos.
@@ -51,20 +51,20 @@ const Footer = () => {
 
       {/* Contenido del footer */}
       <motion.div
-        className="relative container mx-auto flex flex-col items-start justify-center mb-10"
+        className="relative container mx-auto flex flex-col items-start justify-center"
         variants={variants}
       >
         <motion.p className="mt-16 ml-10 font-lastica text-3xl" variants={itemVariants}>
           Phone
         </motion.p>
-        <motion.p className="ml-10 text-2xl text-custom-pink" variants={itemVariants}>
+        <motion.p className="ml-10 text-2xl text-white" variants={itemVariants}>
           (+598) 99 413-456
         </motion.p>
 
         <motion.p className="mt-16 ml-10 font-lastica text-3xl" variants={itemVariants}>
           Email
         </motion.p>
-        <motion.p className="ml-10 text-2xl text-custom-pink" variants={itemVariants}>
+        <motion.p className="ml-10 text-2xl text-white" variants={itemVariants}>
           hello@ascendigital.com
         </motion.p>
 
@@ -72,14 +72,14 @@ const Footer = () => {
           Social
         </motion.p>
         <motion.div
-          className="mt-6 ml-10 border p-4 rounded-md w-50 flex justify-center items-center"
+          className="mt-2 ml-10 border p-4 rounded-md w-50 flex justify-center items-center"
           variants={itemVariants}
         >
           <SocialIcons iconsToShow={['facebook', 'instagram', 'twitter', 'whatsapp']} />
         </motion.div>
 
         {/* Sección de derechos reservados */}
-        <motion.p className="mt-16 ml-10 text-sm text-custom-pink" variants={itemVariants}>
+        <motion.p className="mt-16 ml-10 text-sm text-white" variants={itemVariants}>
           &copy; {new Date().getFullYear()} Ascend Digital. Todos los derechos reservados.
         </motion.p>
       </motion.div>

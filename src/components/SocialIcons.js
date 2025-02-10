@@ -29,7 +29,7 @@ const SocialIcons = ({ iconsToShow = [], iconClasses = {} }) => {
           href={availableIcons[icon]?.link || '#'}
           target="_blank"
           rel="noopener noreferrer"
-          className={`${iconClasses[icon] || 'text-custom-pink'} hover:opacity-80 transition-opacity duration-200`}
+          className={`${iconClasses[icon] || 'text-white'} hover:opacity-80 transition-opacity duration-200`}
         >
           {availableIcons[icon]?.icon}
         </a>
