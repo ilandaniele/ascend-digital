@@ -2,7 +2,6 @@ import React from 'react';
 
 import Header from './components/Header';
 import Presentation from './components/Presentation';
-import About from './components/About';
 import Services from './components/Services';
 import WhyUs from './components/WhyUs';
 import Blog from './components/Blog';
@@ -16,7 +15,6 @@ function App() {
     <div className="App">
       <Header />
       <Presentation />
-      {/* <About /> */}
       <Services />
       <WhyUs />
       <Blog />

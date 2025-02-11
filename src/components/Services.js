@@ -20,12 +20,12 @@ const Services = () => {
 
   const calculateSkew = (translateX) => {
     var skew;
-    if (translateX < -250) {
+    if (translateX < -300) {
       skew = -15;
-    } else if (translateX > 250) {
+    } else if (translateX > 300) {
       skew = 15;
     } else {
-      skew = (translateX / 250) * 15;
+      skew = (translateX / 300) * 15;
     }
     return skew;
   };
@@ -79,7 +79,16 @@ const Services = () => {
 
   // Definimos los offsets según el ancho de la pantalla
   const getOffsets = () => {
-    if (windowWidth < 640) {
+    if (windowWidth < 480) {
+      return [
+        { text: "Diseño", direction: "left", offset: 150 },
+        { text: "Branding", direction: "right", offset: -300 },
+        { text: "Redes Sociales", direction: "left", offset: 400 },
+        { text: "Marketing", direction: "right", offset: -500 },
+        { text: "Anuncios", direction: "left", offset: 650 },
+        { text: "Estrategia", direction: "right", offset: -650 },
+      ];
+    } else if (windowWidth < 640) {
       // Mobile
       return [
         { text: "Diseño", direction: "left", offset: 0 },
@@ -149,7 +158,7 @@ const Services = () => {
               transform: `translate3d(${translateX}px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(${skew}deg, 0deg)`,
               willChange: 'transform, opacity',
               opacity: opacity < 0.1 ? 0.1 : opacity > 1 ? 1 : opacity, // Limitar la opacidad entre 0 y 1
-              transition: 'transform 0.5s ease, opacity 0.5s ease',
+              transition: 'transform 0.1s ease, opacity 0.1s ease',
             }}
           >
             {word.text}
@@ -160,4 +169,4 @@ const Services = () => {
   );
 };
 
-export default Services;
+export default Services;
