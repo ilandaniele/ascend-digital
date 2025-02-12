@@ -36,7 +36,9 @@ const Presentation = () => {
           autoPlay
           loop
           muted
+          playsInline // Permite la reproducción en línea en dispositivos móviles
           className="w-full h-full object-cover"
+          style={{ position: 'fixed', top: 0, left: 0, width: '100%', height: '100%', zIndex: -1 }}
         >
           <source
             src={videoUrl}  // Usa la URL del blob
