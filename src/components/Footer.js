@@ -23,6 +23,8 @@ const Footer = () => {
     visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
   };
 
+  const videoUrl = "https://59cluhuq2e8fq273.public.blob.vercel-storage.com/videos/city2-r9BLj6RFxNnxoQESyq4qfOnrQAzBm7.mp4";
+
   return (
     <motion.footer
       className="relative bg-black text-white py-8 min-h-screen overflow-hidden flex items-end"
@@ -40,7 +42,7 @@ const Footer = () => {
           className="w-full h-full object-cover"
         >
           <source
-            src="/videos/city2.mp4"
+            src={videoUrl}  // Usa la URL del blob
             type="video/mp4"
           />
           Tu navegador no soporta la reproducción de videos.
