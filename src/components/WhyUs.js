@@ -48,6 +48,7 @@ const WhyUs = () => {
 
   return (
     <motion.section
+      id="whyus"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.2 }}

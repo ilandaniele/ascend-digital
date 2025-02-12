@@ -1,8 +1,18 @@
-// FAQItem.js
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 
 const FAQItem = ({ question, answer }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const [height, setHeight] = useState(0); // Estado para controlar la altura del contenido
+  const contentRef = useRef(null); // Referencia al contenedor de la respuesta
+
+  useEffect(() => {
+    // Actualiza la altura del contenedor cuando se abre o cierra
+    if (isOpen) {
+      setHeight(contentRef.current.scrollHeight); // Establece la altura máxima
+    } else {
+      setHeight(0); // Colapsa el contenedor
+    }
+  }, [isOpen]);
 
   return (
     <div className="mb-4">
@@ -21,11 +31,19 @@ const FAQItem = ({ question, answer }) => {
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
         </svg>
       </button>
-      {isOpen && (
-        <div className="p-4 bg-gray-100 text-gray-800 rounded-b-lg">
+      <div
+        ref={contentRef}
+        style={{
+          maxHeight: `${height}px`, // Controla la altura máxima
+          overflow: 'hidden', // Oculta el contenido que excede la altura
+          transition: 'max-height 0.2s ease-out', // Agrega una transición suave
+        }}
+        className="bg-gray-100 text-gray-800 rounded-b-lg"
+      >
+        <div className="p-4">
           <p>{answer}</p>
         </div>
-      )}
+      </div>
     </div>
   );
 };

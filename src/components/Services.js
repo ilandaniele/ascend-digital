@@ -128,7 +128,7 @@ const Services = () => {
   const words = getOffsets();
 
   return (
-    <div
+    <section id="services"
       ref={componentRef}
       className="flex flex-col items-center justify-center min-h-[190vh] overflow-hidden bg-black"
     >
@@ -152,7 +152,7 @@ const Services = () => {
           </div>
         );
       })}
-    </div>
+    </section>
   );
 };
 

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { FaBars, FaTimes } from 'react-icons/fa';
+import { motion, AnimatePresence } from 'framer-motion'; // Importa framer-motion
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -7,6 +8,7 @@ const Header = () => {
   const menuItems = [
     { name: 'Inicio', sectionId: 'presentation' },
     { name: 'Servicios', sectionId: 'services' },
+    { name: '¿Por qué elegirnos?', sectionId: 'whyus' },
     { name: 'Preguntas Frecuentes', sectionId: 'faqs' },
     { name: 'Contacto', sectionId: 'contact' },
   ];
@@ -24,6 +26,13 @@ const Header = () => {
       });
     }
     setMenuOpen(false); // Cierra el menú después de hacer clic en un elemento
+  };
+
+  // Animación para los elementos del menú
+  const menuVariants = {
+    hidden: { x: '-100%', opacity: 0 },
+    visible: { x: 0, opacity: 1, transition: { duration: 0.3, ease: 'easeOut' } },
+    exit: { x: '-100%', opacity: 0, transition: { duration: 0.3, ease: 'easeIn' } },
   };
 
   return (
@@ -54,27 +63,33 @@ const Header = () => {
         </div>
 
         {/* Navegación */}
-        <nav
-          className={`${
-            menuOpen ? 'block' : 'hidden'
-          } absolute top-full left-0 w-full bg-black bg-opacity-90 text-white md:bg-transparent md:bg-opacity-0 md:static md:flex md:items-center md:justify-center md:space-x-8`}
-        >
-          <ul className="flex flex-col md:flex-row md:space-x-4 text-md md:text-lg">
-            {menuItems.map((item, index) => (
-              <li
-                key={index}
-                className="hover:text-custom-pink cursor-pointer transition-colors duration-200 px-4 py-2 md:px-2 md:py-1"
-                onClick={() => scrollToSection(item.sectionId)}
-              >
-                {item.name}
-              </li>
-            ))}
-          </ul>
-        </nav>
-        
+        <AnimatePresence>
+          {(menuOpen || window.innerWidth >= 768) && (
+            <motion.nav
+              initial="hidden"
+              animate="visible"
+              exit="exit"
+              variants={menuVariants}
+              className="absolute top-full left-0 w-full bg-black bg-opacity-90 text-white md:bg-transparent md:bg-opacity-0 md:static md:flex md:items-center md:justify-center md:space-x-8"
+            >
+              <ul className="flex flex-col md:flex-row md:space-x-4 text-md md:text-lg">
+                {menuItems.map((item, index) => (
+                  <motion.li
+                    key={index}
+                    className="hover:text-custom-pink cursor-pointer transition-colors duration-200 px-4 py-2 md:px-2 md:py-1"
+                    onClick={() => scrollToSection(item.sectionId)}
+                    variants={menuVariants}
+                  >
+                    {item.name}
+                  </motion.li>
+                ))}
+              </ul>
+            </motion.nav>
+          )}
+        </AnimatePresence>
       </div>
     </header>
   );
 };
 
-export default Header;
+export default Header;
