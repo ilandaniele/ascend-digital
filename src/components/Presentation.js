@@ -21,6 +21,9 @@ const Presentation = () => {
     visible: { opacity: 1, y: 0, transition: { duration: 0.8 } },
   };
 
+  // URL del video subido a Vercel Blob
+  const videoUrl = "https://59cluhuq2e8fq273.public.blob.vercel-storage.com/videos/city-3tkrBL3UOGQZxG9f0c0Kd6G97DItgj.mp4";
+
   return (
     <motion.section
       id="presentation"
@@ -36,17 +39,17 @@ const Presentation = () => {
           className="w-full h-full object-cover"
         >
           <source
-            src="/videos/city.mp4"
+            src={videoUrl}  // Usa la URL del blob
             type="video/mp4"
           />
           Tu navegador no soporta la reproducción de videos.
         </video>
         {/* Superposición oscura */}
-        
       </div>
       
       {/* Superposición para mejorar la legibilidad */}
       <div className="absolute inset-0 bg-black opacity-50"></div>
+      
       {/* Contenido */}
       <div className="relative z-10 text-white flex-grow flex flex-col justify-center items-start px-6 md:px-20">
         <motion.div
