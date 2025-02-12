@@ -40,7 +40,7 @@ const Footer = () => {
           className="w-full h-full object-cover"
         >
           <source
-            src={require('../assets/city2.mp4')}
+            src="/videos/city2.mp4"
             type="video/mp4"
           />
           Tu navegador no soporta la reproducción de videos.

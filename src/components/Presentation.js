@@ -36,7 +36,7 @@ const Presentation = () => {
           className="w-full h-full object-cover"
         >
           <source
-            src={require('../assets/city.mp4')}
+            src="/videos/city.mp4"
             type="video/mp4"
           />
           Tu navegador no soporta la reproducción de videos.
