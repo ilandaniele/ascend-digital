@@ -79,12 +79,12 @@ const Services = () => {
   const getOffsets = () => {
     if (windowWidth < 480) {
       return [
-        { text: "Diseño", direction: "left", offset: 350 },
-        { text: "Branding", direction: "right", offset: -500 },
-        { text: "Redes Sociales", direction: "left", offset: 600 },
-        { text: "Marketing", direction: "right", offset: -700 },
-        { text: "Anuncios", direction: "left", offset: 850 },
-        { text: "Estrategia", direction: "right", offset: -850 },
+        { text: "Diseño", direction: "left", offset: 450 },
+        { text: "Branding", direction: "right", offset: -600 },
+        { text: "Redes Sociales", direction: "left", offset: 700 },
+        { text: "Marketing", direction: "right", offset: -800 },
+        { text: "Anuncios", direction: "left", offset: 950 },
+        { text: "Estrategia", direction: "right", offset: -950 },
       ];
     } else if (windowWidth < 640) {
       return [
