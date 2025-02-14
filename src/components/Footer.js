@@ -68,7 +68,7 @@ const Footer = () => {
           Email
         </motion.p>
         <motion.p className="ml-10 text-2xl text-white" variants={itemVariants}>
-          hello@ascendigital.com
+          hello@ascendigitalmarketing.com
         </motion.p>
 
         <motion.p className="mt-16 ml-10 font-lastica text-3xl" variants={itemVariants}>

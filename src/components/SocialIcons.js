@@ -9,7 +9,7 @@ const SocialIcons = ({ iconsToShow = [], iconClasses = {} }) => {
     },
     instagram: {
       icon: <FaInstagram size={24} />,
-      link: 'https://www.instagram.com',
+      link: 'https://www.instagram.com/ascendigitalmkt_',
     },
     whatsapp: {
       icon: <FaWhatsapp size={24} />,
