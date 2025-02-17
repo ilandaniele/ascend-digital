@@ -89,9 +89,9 @@ const Services = () => {
       return [
         { text: "Diseño", direction: "left", offset: 50 },
         { text: "Branding", direction: "right", offset: -100 },
-        { text: "Redes Sociales", direction: "left", offset: 150 },
+        { text: "Redes Sociales", direction: "left", offset: 200 },
         { text: "Marketing", direction: "right", offset: -200 },
-        { text: "Anuncios", direction: "left", offset: 250 },
+        { text: "Anuncios", direction: "left", offset: 300 },
         { text: "Estrategia", direction: "right", offset: -300 },
       ];
     } else if (windowWidth < 640) {
