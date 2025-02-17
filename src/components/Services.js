@@ -123,12 +123,12 @@ const Services = () => {
       ];
     } else {
       return [
-        { text: "Diseño", direction: "left", offset: 300 },
-        { text: "Branding", direction: "right", offset: -500 },
-        { text: "Redes Sociales", direction: "left", offset: 950 },
-        { text: "Marketing", direction: "right", offset: -900 },
-        { text: "Anuncios", direction: "left", offset: 1150 },
-        { text: "Estrategia", direction: "right", offset: -1350 },
+        { text: "Diseño", direction: "left", offset: 500 },
+        { text: "Branding", direction: "right", offset: -700 },
+        { text: "Redes Sociales", direction: "left", offset: 1150 },
+        { text: "Marketing", direction: "right", offset: -1100 },
+        { text: "Anuncios", direction: "left", offset: 1350 },
+        { text: "Estrategia", direction: "right", offset: -1550 },
       ];
     }
   };
