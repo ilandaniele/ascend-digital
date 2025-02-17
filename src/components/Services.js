@@ -76,6 +76,14 @@ const Services = () => {
     };
   }, [handleScroll, handleResize]);
 
+  const getMinHeight = () => {
+    if (windowWidth < 480) return "min-h-[120vh]";
+    if (windowWidth < 640) return "min-h-[130vh]";
+    if (windowWidth < 1024) return "min-h-[150vh]";
+    if (windowWidth < 1530) return "min-h-[170vh]";
+    return "min-h-[190vh]";
+  };
+
   const getOffsets = () => {
     if (windowWidth < 480) {
       return [
@@ -128,9 +136,10 @@ const Services = () => {
   const words = getOffsets();
 
   return (
-    <section id="services"
+    <section
+      id="services"
       ref={componentRef}
-      className="flex flex-col items-center justify-center min-h-[190vh] overflow-hidden bg-black"
+      className={`flex flex-col items-center justify-center overflow-hidden bg-black ${getMinHeight()}`}
     >
       {words.map((word, index) => {
         const direction = index % 2 === 0 ? -1 : 1;
