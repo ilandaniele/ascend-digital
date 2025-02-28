@@ -88,11 +88,11 @@ const Services = () => {
     if (windowWidth < 480) {
       return [
         { text: "Diseño", direction: "left", offset: 200 },
-        { text: "Branding", direction: "right", offset: -200 },
+        { text: "Branding", direction: "right", offset: -300 },
         { text: "Redes Sociales", direction: "left", offset: 400 },
-        { text: "Marketing", direction: "right", offset: -400 },
+        { text: "Marketing", direction: "right", offset: -600 },
         { text: "Anuncios", direction: "left", offset: 600 },
-        { text: "Estrategia", direction: "right", offset: -600 },
+        { text: "Estrategia", direction: "right", offset: -800 },
       ];
     } else if (windowWidth < 640) {
       return [
