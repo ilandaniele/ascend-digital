@@ -91,8 +91,8 @@ const Services = () => {
         { text: "Branding", direction: "right", offset: -100 },
         { text: "Redes Sociales", direction: "left", offset: 200 },
         { text: "Marketing", direction: "right", offset: -200 },
-        { text: "Anuncios", direction: "left", offset: 300 },
-        { text: "Estrategia", direction: "right", offset: -300 },
+        { text: "Anuncios", direction: "left", offset: 600 },
+        { text: "Estrategia", direction: "right", offset: -600 },
       ];
     } else if (windowWidth < 640) {
       return [
@@ -123,12 +123,12 @@ const Services = () => {
       ];
     } else {
       return [
-        { text: "Diseño", direction: "left", offset: 500 },
-        { text: "Branding", direction: "right", offset: -700 },
-        { text: "Redes Sociales", direction: "left", offset: 1150 },
-        { text: "Marketing", direction: "right", offset: -1100 },
-        { text: "Anuncios", direction: "left", offset: 1350 },
-        { text: "Estrategia", direction: "right", offset: -1550 },
+        { text: "Diseño", direction: "left", offset: 400 },
+        { text: "Branding", direction: "right", offset: -550 },
+        { text: "Redes Sociales", direction: "left", offset: 750 },
+        { text: "Marketing", direction: "right", offset: -950 },
+        { text: "Anuncios", direction: "left", offset: 1150 },
+        { text: "Estrategia", direction: "right", offset: -1300 },
       ];
     }
   };
