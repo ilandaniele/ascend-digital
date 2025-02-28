@@ -41,7 +41,7 @@ const Footer = () => {
           className="absolute top-0 left-0 w-full h-full object-cover"
         >
           <source
-            src="/videos/City2.mp4" // Nueva ruta local que funciona en Vercel y local
+            src="/videos/City2_high.mp4" // Nueva ruta local que funciona en Vercel y local
             type="video/mp4"
           />
           Tu navegador no soporta la reproducción de videos.
