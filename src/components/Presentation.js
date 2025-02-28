@@ -21,9 +21,6 @@ const Presentation = () => {
     visible: { opacity: 1, y: 0, transition: { duration: 0.8 } },
   };
 
-  // URL del video subido a Vercel Blob
-  const videoUrl = "https://59cluhuq2e8fq273.public.blob.vercel-storage.com/videos/city-3tkrBL3UOGQZxG9f0c0Kd6G97DItgj.mp4";
-
   return (
     <motion.section
       id="presentation"
@@ -37,15 +34,14 @@ const Presentation = () => {
           loop
           muted
           playsInline
-          className="w-full h-full object-cover"
+          className="absolute top-0 left-0 w-full h-full object-cover"
         >
           <source
-            src={videoUrl}  // Usa la URL del blob
+            src="/videos/City1.mp4" // Nueva ruta local que funciona en Vercel
             type="video/mp4"
           />
           Tu navegador no soporta la reproducción de videos.
         </video>
-        {/* Superposición oscura */}
       </div>
       
       {/* Superposición para mejorar la legibilidad */}
