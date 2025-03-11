@@ -25,7 +25,7 @@ const Presentation = () => {
     <motion.section
       id="presentation"
       ref={ref}
-      className="relative min-h-screen flex flex-col overflow-hidden"
+      className="relative min-h-screen flex flex-col overflow-hidden bg-gray-600 !important"
     >
       {/* Video de fondo */}
       <div className="absolute inset-0 overflow-hidden">
