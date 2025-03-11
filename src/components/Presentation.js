@@ -37,7 +37,7 @@ const Presentation = () => {
           className="absolute top-0 left-0 w-full h-full object-cover"
         >
           <source
-            src="/videos/City1_high.mp4" // Nueva ruta local que funciona en Vercel
+            src={`${process.env.PUBLIC_URL}/videos/City1_high.mp4`} // Nueva ruta local que funciona en Vercel
             type="video/mp4"
           />
           Tu navegador no soporta la reproducción de videos.
