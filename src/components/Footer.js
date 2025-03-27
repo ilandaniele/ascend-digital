@@ -23,6 +23,14 @@ const Footer = () => {
     visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
   };
 
+  const iconHoverEffect = {
+    whileHover: {
+      y: -6,
+      color: '#FFD700',
+      transition: { type: 'spring', stiffness: 300, damping: 15 },
+    },
+  };
+
   return (
     <motion.footer
       className="relative bg-black text-white py-8 min-h-screen overflow-hidden flex items-end"
@@ -73,10 +81,18 @@ const Footer = () => {
           Social
         </motion.p>
         <motion.div
-          className="mt-2 ml-10 border p-4 rounded-md w-50 flex justify-center items-center"
+          className="mt-2 ml-10 border p-4 rounded-md w-50 flex justify-center items-center gap-4"
           variants={itemVariants}
         >
-          <SocialIcons iconsToShow={['facebook', 'instagram', 'twitter', 'whatsapp']} />
+          {['facebook', 'instagram', 'twitter', 'whatsapp'].map((icon, index) => (
+            <motion.div
+              key={index}
+              {...iconHoverEffect}
+              className="text-white text-xl transition-colors"
+            >
+              <SocialIcons iconsToShow={[icon]} />
+            </motion.div>
+          ))}
         </motion.div>
 
         {/* Sección de derechos reservados */}
