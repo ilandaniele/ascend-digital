@@ -76,9 +76,13 @@ const Header = () => {
                 {menuItems.map((item, index) => (
                   <motion.li
                     key={index}
-                    className="hover:text-custom-pink cursor-pointer transition-colors duration-200 px-4 py-2 md:px-2 md:py-1"
-                    onClick={() => scrollToSection(item.sectionId)}
+                    className="hover:text-yellow-400 cursor-pointer transition-colors duration-200 px-4 py-2 md:px-2 md:py-1"
+                    onClick={() => handleNavigation(item)}
                     variants={menuVariants}
+                    whileHover={{
+                      scale: 1.08,
+                      transition: { type: 'spring', stiffness: 300, damping: 15 }
+                    }}
                   >
                     {item.name}
                   </motion.li>
