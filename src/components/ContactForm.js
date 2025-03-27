@@ -169,9 +169,9 @@ const ContactForm = () => {
             >
               <SocialIcons
                 iconsToShow={['whatsapp']}
-                iconClasses={{
-                  whatsapp: 'text-white mr-2',
-                }}
+                iconClasses={{ whatsapp: 'text-white mr-2' }}
+                animateOnHover={false}
+                hoverColor="#25D366" // verde WhatsApp
               />
               Envíanos un mensaje
             </a>
