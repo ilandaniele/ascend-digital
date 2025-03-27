@@ -1,11 +1,21 @@
+// SocialIcons.js
 import React from 'react';
-import { FaFacebook, FaInstagram, FaWhatsapp, FaXTwitter } from 'react-icons/fa6';
+import {
+  FaFacebook,
+  FaInstagram,
+  FaWhatsapp,
+  FaXTwitter,
+  FaTwitch,
+  FaYoutube,
+  FaTiktok,
+} from 'react-icons/fa6';
+import { motion } from 'framer-motion';
 
 const SocialIcons = ({ iconsToShow = [], iconClasses = {} }) => {
   const availableIcons = {
     facebook: {
       icon: <FaFacebook size={24} />,
-      link: 'https://www.facebook.com',
+      link: 'https://www.facebook.com/AjedrezHOY',
     },
     instagram: {
       icon: <FaInstagram size={24} />,
@@ -13,26 +23,39 @@ const SocialIcons = ({ iconsToShow = [], iconClasses = {} }) => {
     },
     whatsapp: {
       icon: <FaWhatsapp size={24} />,
-      link: 'https://www.whatsapp.com',
+      link: 'https://wa.me/59899413456',
     },
     twitter: {
       icon: <FaXTwitter size={24} />,
-      link: 'https://www.twitter.com',
+      link: 'https://x.com/AjedrezHOY',
+    },
+    twitch: {
+      icon: <FaTwitch size={24} />,
+      link: 'https://www.twitch.tv/ascendigital',
+    },
+    youtube: {
+      icon: <FaYoutube size={24} />,
+      link: 'https://www.youtube.com/Ascendigital',
+    },
+    tiktok: {
+      icon: <FaTiktok size={24} />,
+      link: 'https://www.tiktok.com/@ascendigitalmarketing',
     },
   };
 
   return (
     <div className="flex space-x-4">
       {iconsToShow.map((icon) => (
-        <a
+        <motion.a
           key={icon}
           href={availableIcons[icon]?.link || '#'}
           target="_blank"
           rel="noopener noreferrer"
-          className={`${iconClasses[icon] || 'text-white'} hover:opacity-80 transition-opacity duration-200`}
+          whileHover={{ y: -6 }}
+          className={`${iconClasses[icon] || ''} text-white transition-all duration-300 hover:text-yellow-400 drop-shadow-[0_1px_1px_rgba(255,255,255,0.1)]`}
         >
           {availableIcons[icon]?.icon}
-        </a>
+        </motion.a>
       ))}
     </div>
   );

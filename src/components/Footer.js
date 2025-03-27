@@ -1,3 +1,4 @@
+// Footer.js
 import React, { useEffect } from 'react';
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
@@ -15,19 +16,19 @@ const Footer = () => {
 
   const variants = {
     hidden: { opacity: 0, y: 50 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.8, staggerChildren: 0.2 } },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.8, staggerChildren: 0.2 },
+    },
   };
 
   const itemVariants = {
     hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
-  };
-
-  const iconHoverEffect = {
-    whileHover: {
-      y: -6,
-      color: '#FFD700',
-      transition: { type: 'spring', stiffness: 300, damping: 15 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.5 },
     },
   };
 
@@ -48,13 +49,9 @@ const Footer = () => {
           playsInline
           className="absolute top-0 left-0 w-full h-full object-cover"
         >
-          <source
-            src="/videos/City2_high.mp4" // Nueva ruta local que funciona en Vercel y local
-            type="video/mp4"
-          />
+          <source src="/videos/City2_high.mp4" type="video/mp4" />
           Tu navegador no soporta la reproducción de videos.
         </video>
-        {/* Superposición oscura */}
         <div className="absolute inset-0 bg-black opacity-50"></div>
       </div>
 
@@ -64,7 +61,7 @@ const Footer = () => {
         variants={variants}
       >
         <motion.p className="mt-16 ml-10 font-lastica text-3xl" variants={itemVariants}>
-          Phone
+          Telefono
         </motion.p>
         <motion.p className="ml-10 text-2xl text-white" variants={itemVariants}>
           (+598) 99 413-456
@@ -84,18 +81,11 @@ const Footer = () => {
           className="mt-2 ml-10 border p-4 rounded-md w-50 flex justify-center items-center gap-4"
           variants={itemVariants}
         >
-          {['facebook', 'instagram', 'twitter', 'whatsapp'].map((icon, index) => (
-            <motion.div
-              key={index}
-              {...iconHoverEffect}
-              className="text-white text-xl transition-colors"
-            >
-              <SocialIcons iconsToShow={[icon]} />
-            </motion.div>
-          ))}
+          <SocialIcons iconsToShow={[
+            'facebook', 'instagram', 'twitter', 'whatsapp']}
+          />
         </motion.div>
 
-        {/* Sección de derechos reservados */}
         <motion.p className="mt-16 ml-10 text-sm text-white" variants={itemVariants}>
           &copy; {new Date().getFullYear()} Ascend Digital. Todos los derechos reservados.
         </motion.p>
