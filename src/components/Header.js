@@ -77,7 +77,7 @@ const Header = () => {
                   <motion.li
                     key={index}
                     className="hover:text-yellow-400 cursor-pointer transition-colors duration-200 px-4 py-2 md:px-2 md:py-1"
-                    onClick={() => scrollToSection(item)}
+                    onClick={() => scrollToSection(item.sectionId)}
                     variants={menuVariants}
                     whileHover={{
                       scale: 1.08,

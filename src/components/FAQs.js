@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import ContactButton from './ContactButton';
 import FAQItem from './FAQItem';
 
 const faqs = [
@@ -94,6 +95,10 @@ const FAQs = () => {
               <FAQItem question={faq.question} answer={faq.answer} />
             </motion.div>
           ))}
+
+          <div className="mt-10 flex justify-center">
+            <ContactButton label="Contactanos si es tu caso" />
+          </div>
         </motion.div>
       </div>
     </motion.section>

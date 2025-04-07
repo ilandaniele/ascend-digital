@@ -56,7 +56,7 @@ const Presentation = () => {
           variants={variants}
         >
           <h2 className="font-sans text-5xl md:text-8xl mb-4">ASCEND DIGITAL</h2>
-          <p className="text-2xl md:text-4xl mb-8">Agencia de Marketing Inmobiliario</p>
+          <p className="text-2xl md:text-4xl mb-8">Agencia de Marketing Digital</p>
           {/* Botón de WhatsApp */}
           <a
             href="https://wa.me/59899413456"
