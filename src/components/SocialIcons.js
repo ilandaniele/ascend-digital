@@ -15,7 +15,7 @@ const SocialIcons = ({ iconsToShow = [], iconClasses = {}, animateOnHover = true
   const availableIcons = {
     facebook: {
       icon: <FaFacebook size={24} />,
-      link: 'https://www.facebook.com/AjedrezHOY',
+      link: 'https://www.facebook.com/',
     },
     instagram: {
       icon: <FaInstagram size={24} />,
@@ -27,7 +27,7 @@ const SocialIcons = ({ iconsToShow = [], iconClasses = {}, animateOnHover = true
     },
     twitter: {
       icon: <FaXTwitter size={24} />,
-      link: 'https://x.com/AjedrezHOY',
+      link: 'https://x.com/',
     },
     twitch: {
       icon: <FaTwitch size={24} />,

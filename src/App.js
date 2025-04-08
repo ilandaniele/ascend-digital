@@ -18,7 +18,7 @@ function App() {
       <WhyUs />
       <Blog />
       <FAQs />
-      <Footer /> {/* issues at 620 */}
+      <Footer />
     </div>
   );
 }
