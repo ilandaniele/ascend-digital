@@ -96,7 +96,7 @@ const FAQs = () => {
             </motion.div>
           ))}
 
-          <div className="mt-10 flex justify-center">
+          <div id="contact" className="mt-10 flex justify-center">
             <ContactButton label="Contactanos si es tu caso" />
           </div>
         </motion.div>

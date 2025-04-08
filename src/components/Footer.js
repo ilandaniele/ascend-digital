@@ -67,10 +67,10 @@ const Footer = () => {
   
       {/* Contenido principal centrado abajo */}
       <motion.div
-        className="relative w-full flex-grow flex items-end justify-center px-8 md:px-40 pb-20"
+        className="relative w-full flex-grow flex items-end justify-center px-6 pb-20"
         variants={variants}
       >
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-20 w-full">
+        <div className="w-full max-w-6xl grid grid-cols-1 md:grid-cols-2 gap-20">
           {/* Columna 1: Logo + contacto */}
           <motion.div className="space-y-4" variants={itemVariants}>
             <div className="flex items-center gap-3 mb-2">
@@ -83,17 +83,17 @@ const Footer = () => {
                 Ascend <span className="font-bold">Digital</span>
               </p>
             </div>
-  
+
             <h3 className="text-white text-2xl font-bold uppercase tracking-wide">Contacto</h3>
             <div className="border-b-2 border-yellow-400 w-16 mb-6"></div>
-  
+
             <div className="flex items-center gap-2 text-white text-lg">
               <FaEnvelope className="text-yellow-400" />
               <a href="mailto:hello@ascendigitalmarketing.com">
                 hello@ascendigitalmarketing.com
               </a>
             </div>
-  
+
             <div className="mt-4">
               <SocialIcons
                 iconsToShow={['instagram', 'twitter', 'facebook', 'whatsapp']}
@@ -101,7 +101,7 @@ const Footer = () => {
               />
             </div>
           </motion.div>
-  
+
           {/* Columna 2: Enlaces de interés */}
           <motion.div variants={itemVariants}>
             <h3 className="text-white text-2xl font-bold uppercase tracking-wide mb-2">
@@ -117,6 +117,7 @@ const Footer = () => {
           </motion.div>
         </div>
       </motion.div>
+
   
       {/* Pie de página */}
       <motion.div
