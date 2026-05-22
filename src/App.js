@@ -8,12 +8,14 @@ import Blog from './components/Blog';
 import FAQs from './components/FAQs';
 import Footer from './components/Footer';
 import './styles/tailwind.css';
+import WhatsappWidget from "./components/WhatsappWidget";
 
 function App() {
   return (
     <div className="App">
       <Header />
       <Presentation />
+      <WhatsappWidget />
       <Services />
       <WhyUs />
       <Blog />
